@@ -9,17 +9,13 @@ import com.devskiller.jfairy.producer.person.NationalIdentificationNumberFactory
 import com.devskiller.jfairy.producer.person.NationalIdentityCardNumberProvider;
 import com.devskiller.jfairy.producer.person.PassportNumberProvider;
 import com.devskiller.jfairy.producer.person.locale.NoNationalIdentificationNumberFactory;
-import com.devskiller.jfairy.producer.person.locale.en.EnAddressProvider;
-import com.devskiller.jfairy.producer.person.locale.en.EnNationalIdentityCardNumberProvider;
-import com.devskiller.jfairy.producer.person.locale.en.EnPassportNumberProvider;
+import com.devskiller.jfairy.producer.person.locale.ru.RuAddressProvider;
+import com.devskiller.jfairy.producer.person.locale.ru.RuNationalIdentityCardNumberProvider;
+import com.devskiller.jfairy.producer.person.locale.ru.RuPassportNumberProvider;
 
-/**
- * @author Olga Maciaszek-Sharma
- * @since 08.03.15
- */
-public class EnFairyModule extends FairyModule {
+public class RuFairyModule extends FairyModule {
 
-	public EnFairyModule(DataMaster dataMaster, RandomGenerator randomGenerator) {
+	public RuFairyModule(DataMaster dataMaster, RandomGenerator randomGenerator) {
 		super(dataMaster, randomGenerator);
 	}
 
@@ -27,10 +23,9 @@ public class EnFairyModule extends FairyModule {
 	protected void configure() {
 		super.configure();
 		bind(NationalIdentificationNumberFactory.class).to(NoNationalIdentificationNumberFactory.class);
-		bind(NationalIdentityCardNumberProvider.class).to(EnNationalIdentityCardNumberProvider.class);
+		bind(NationalIdentityCardNumberProvider.class).to(RuNationalIdentityCardNumberProvider.class);
 		bind(VATIdentificationNumberProvider.class).to(RuVATIdentificationNumberProvider.class);
-		bind(AddressProvider.class).to(EnAddressProvider.class);
-		bind(PassportNumberProvider.class).to(EnPassportNumberProvider.class);
+		bind(AddressProvider.class).to(RuAddressProvider.class);
+		bind(PassportNumberProvider.class).to(RuPassportNumberProvider.class);
 	}
-
 }

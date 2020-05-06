@@ -1,19 +1,18 @@
 package com.devskiller.jfairy;
 
-import java.io.IOException;
-import java.util.Locale;
-
+import com.devskiller.jfairy.data.DataMaster;
+import com.devskiller.jfairy.data.DataMasterModule;
+import com.devskiller.jfairy.data.MapBasedDataMaster;
+import com.devskiller.jfairy.producer.RandomGenerator;
+import com.devskiller.jfairy.producer.util.LanguageCode;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.google.inject.Provider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.devskiller.jfairy.data.DataMaster;
-import com.devskiller.jfairy.data.DataMasterModule;
-import com.devskiller.jfairy.data.MapBasedDataMaster;
-import com.devskiller.jfairy.producer.RandomGenerator;
-import com.devskiller.jfairy.producer.util.LanguageCode;
+import java.io.IOException;
+import java.util.Locale;
 
 /**
  * <p>Using a {@link #builder()}, you can configure the following fields:</p>
@@ -133,6 +132,8 @@ public class Bootstrap {
 				return new PlFairyModule(dataMaster, randomGenerator);
 			case EN:
 				return new EnFairyModule(dataMaster, randomGenerator);
+			case RU:
+				return new RuFairyModule(dataMaster, randomGenerator);
 			case ES:
 				return new EsFairyModule(dataMaster, randomGenerator);
 			case FR:

@@ -7,6 +7,7 @@ package com.devskiller.jfairy.producer.util;
 public enum LanguageCode {
 	PL,
 	EN,
+	RU,
 	ES,
 	FR,
 	KA,
